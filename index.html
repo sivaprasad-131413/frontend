@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script>
+
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+    </script> 
+    <script>
+        $(function () {
+            $("#imageListId").sortable({
+                update: function (event, ui) {
+                    getIdsOfImages();
+                }        
+            });
+        });
+
+        function getIdsOfImages() {
+            var values = [];
+            $('.listitemClass').each(function (index) {
+                values.push($(this).attr("id")
+                    .replace("imageNo", ""));
+            });
+            $('#outputvalues').val(values);
+        }
+    </script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="height"></div><br>
+    <div id="imageListId">
+        <div id="imgNo1" class="list-item">
+            <img src="https://media.gettyimages.com/id/1277094370/photo/low-angle-view-of-statue-against-sky.jpg?s=612x612&w=gi&k=20&c=cAa4UOCXCvI8sFvXthFb2-ttdRLJXdp1b7ERk5uv6LY=" alt="">
+        </div>
+
+        <div id="imgNo2" class="list-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbPoDD3Ot0hSvan4xn3QjaUiXMB1mpmG1PIA&usqp=CAU" alt="">
+        </div>
+
+        <div id="imgNo3" class="list-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJUDdTpf8NQuBtdrBgSKRtn7chovffMKPtiA&usqp=CAU" alt="">
+        </div>
+
+        <div id="imgNo4" class="list-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ_G9U9095poYEIvtg8fnA2Ef3dcjLEebptQ&usqp=CAU" alt="">
+        </div>
+
+        <div id="imgNo5" class="list-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMma1RsDUuSNsB1CLxhrSbNJH9OApmgGQndQ&usqp=CAU">
+
+        <div id="imgNo6" class="list-item">
+            <img src="https://cdn.pixabay.com/photo/2017/01/19/23/46/church-1993645__340.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>
